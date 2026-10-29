@@ -1,19 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { SERVICES, CITIES } from "@/app/lib/data";
-
-function ForkliftIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-      <path d="M2 20h8V10H2v10z" fill="white" />
-      <path d="M10 5v15" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M10 20h8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M5 10V6" stroke="white" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 function ChevronDown({ open }: { open: boolean }) {
   return (

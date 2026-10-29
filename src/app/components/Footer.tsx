@@ -116,7 +116,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} KE Material Handling Solutions. All rights reserved.</p>
+          <p>© 2025 KE Material Handling Solutions. All rights reserved.</p>
           <p>Serving the Dallas–Fort Worth Metroplex, TX</p>
         </div>
 
