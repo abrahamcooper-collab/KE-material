@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     "Professional mobile forklift repair, preventive maintenance, and equipment diagnostics throughout the Dallas–Fort Worth Metroplex. Call (972) 277-7563.",
   keywords:
     "forklift repair, forklift maintenance, material handling, DFW, Dallas Fort Worth, Arlington TX",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
