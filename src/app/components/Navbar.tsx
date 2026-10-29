@@ -32,7 +32,7 @@ function Dropdown({ label, items }: { label: string; items: { name: string; slug
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-gray-300 hover:text-white text-sm transition-colors duration-150"
+        className="flex items-center gap-1 text-gray-300 hover:text-white text-sm transition-colors duration-150 cursor-pointer"
       >
         {label}
         <ChevronDown open={open} />
@@ -69,32 +69,28 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[58px]">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-          <div className="w-9 h-9 bg-[#f97316] rounded-lg flex items-center justify-center">
-            <ForkliftIcon />
-          </div>
-          <div className="leading-tight">
-            <div className="text-white font-bold text-[13px] tracking-tight leading-none">KE Material Handling</div>
-            <div className="text-gray-400 text-[9px] tracking-[0.15em] uppercase mt-0.5">Solutions</div>
-          </div>
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/logo.png"
+            alt="KE Material Handling"
+            width={180}
+            height={40}
+            className="h-9 w-auto sm:h-10"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6">
           <Link href="/" className="text-gray-300 hover:text-white text-sm transition-colors">Home</Link>
-
-          {/* Services Dropdown */}
           <Dropdown label="Services" items={serviceItems} />
-
-          {/* Service Areas Dropdown */}
           <Dropdown label="Service Areas" items={cityItems} />
-
           <Link href="/#equipment" className="text-gray-300 hover:text-white text-sm transition-colors">Equipment</Link>
           <Link href="/#contact" className="text-gray-300 hover:text-white text-sm transition-colors">Contact</Link>
         </nav>
 
         {/* Desktop Right */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:9722777563"
             className="flex items-center gap-2 text-white text-sm font-medium hover:text-[#f97316] transition-colors"
@@ -113,35 +109,35 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden p-1" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <button className="lg:hidden p-1 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           {menuOpen ? (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="6" y1="6" x2="18" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="6" y1="6" x2="18" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
           ) : (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="12" x2="21" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="18" x2="21" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="12" x2="21" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="18" x2="21" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
           )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#1a1a1a] border-t border-white/10 px-4 py-4">
-          <Link href="/" className="block text-gray-300 hover:text-white text-sm py-2" onClick={() => setMenuOpen(false)}>Home</Link>
+        <div className="lg:hidden bg-[#1a1a1a] border-t border-white/10 px-4 py-4 max-h-[calc(100vh-58px)] overflow-y-auto">
+          <Link href="/" className="block text-gray-300 hover:text-white text-sm py-2.5" onClick={() => setMenuOpen(false)}>Home</Link>
 
           {/* Mobile Services */}
           <div>
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center justify-between w-full text-gray-300 hover:text-white text-sm py-2"
+              className="flex items-center justify-between w-full text-gray-300 hover:text-white text-sm py-2.5 cursor-pointer"
             >
               Services <ChevronDown open={servicesOpen} />
             </button>
             {servicesOpen && (
-              <div className="pl-4 pb-2 space-y-1">
+              <div className="pl-4 pb-2 space-y-0.5">
                 {serviceItems.map((item) => (
                   <Link
                     key={item.slug}
                     href={`/services/${item.slug}`}
-                    className="block text-gray-400 hover:text-white text-xs py-1.5"
+                    className="block text-gray-400 hover:text-white text-sm py-2"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.name}
@@ -155,17 +151,17 @@ export default function Navbar() {
           <div>
             <button
               onClick={() => setAreasOpen(!areasOpen)}
-              className="flex items-center justify-between w-full text-gray-300 hover:text-white text-sm py-2"
+              className="flex items-center justify-between w-full text-gray-300 hover:text-white text-sm py-2.5 cursor-pointer"
             >
               Service Areas <ChevronDown open={areasOpen} />
             </button>
             {areasOpen && (
-              <div className="pl-4 pb-2 space-y-1">
+              <div className="pl-4 pb-2 space-y-0.5">
                 {cityItems.map((item) => (
                   <Link
                     key={item.slug}
                     href={`/service-area/${item.slug}`}
-                    className="block text-gray-400 hover:text-white text-xs py-1.5"
+                    className="block text-gray-400 hover:text-white text-sm py-2"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.name}
@@ -175,8 +171,8 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/#equipment" className="block text-gray-300 hover:text-white text-sm py-2" onClick={() => setMenuOpen(false)}>Equipment</Link>
-          <Link href="/#contact" className="block text-gray-300 hover:text-white text-sm py-2" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/#equipment" className="block text-gray-300 hover:text-white text-sm py-2.5" onClick={() => setMenuOpen(false)}>Equipment</Link>
+          <Link href="/#contact" className="block text-gray-300 hover:text-white text-sm py-2.5" onClick={() => setMenuOpen(false)}>Contact</Link>
 
           <div className="pt-3 border-t border-white/10 space-y-3 mt-2">
             <a href="tel:9722777563" className="flex items-center gap-2 text-white text-sm font-medium">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
@@ -19,23 +20,14 @@ export default function Footer() {
           {/* Brand — col-span-5 */}
           <div className="lg:col-span-5">
             {/* Logo */}
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-[#f97316] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M2 20h8V10H2v10z" fill="white" />
-                  <path d="M10 5v15" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-                  <path d="M10 20h8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-                  <path d="M5 10V6" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div className="leading-tight">
-                <div className="text-white font-bold text-[14px] tracking-tight leading-none">
-                  KE Material Handling
-                </div>
-                <div className="text-white/40 text-[9px] tracking-[0.18em] uppercase mt-0.5">
-                  Solutions
-                </div>
-              </div>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="KE Material Handling"
+                width={200}
+                height={44}
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Tagline */}

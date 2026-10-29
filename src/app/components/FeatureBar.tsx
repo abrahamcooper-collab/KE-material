@@ -45,9 +45,9 @@ export default function FeatureBar() {
   return (
     <div className="bg-[#f3f4f6] border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x divide-gray-200">
           {FEATURES.map((f) => (
-            <div key={f.label} className="flex items-center gap-3 px-6 py-4">
+            <div key={f.label} className="flex items-center gap-3 px-4 lg:px-6 py-3 lg:py-4">
               <div className="flex-shrink-0">{f.icon}</div>
               <span className="text-gray-700 text-sm font-medium">{f.label}</span>
             </div>
