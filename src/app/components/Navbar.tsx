@@ -74,16 +74,16 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#1a1a1a] sticky top-0 z-50 border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[58px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo.png"
             alt="KE Material Handling"
-            width={180}
-            height={40}
-            className="h-9 w-auto sm:h-10"
+            width={240}
+            height={54}
+            className="h-12 w-auto sm:h-14"
             priority
           />
         </Link>
@@ -128,7 +128,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#1a1a1a] border-t border-white/10 px-4 py-4 max-h-[calc(100vh-58px)] overflow-y-auto">
+        <div className="lg:hidden bg-[#1a1a1a] border-t border-white/10 px-4 py-4 max-h-[calc(100vh-72px)] overflow-y-auto">
           <button onClick={() => { goHome(); setMenuOpen(false); }} className="block text-gray-300 hover:text-white text-sm py-2.5 cursor-pointer">Home</button>
 
           {/* Mobile Services */}

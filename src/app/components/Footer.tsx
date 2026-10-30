@@ -24,9 +24,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="KE Material Handling"
-                width={200}
-                height={44}
-                className="h-10 w-auto"
+                width={260}
+                height={58}
+                className="h-14 w-auto"
               />
             </Link>
 

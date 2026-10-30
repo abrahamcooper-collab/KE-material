@@ -2,6 +2,59 @@
 
 import { useState } from "react";
 
+const FORKLIFT_MAKES = [
+  "Toyota",
+  "Hyster",
+  "Yale",
+  "Crown",
+  "Raymond",
+  "CAT (Caterpillar)",
+  "Mitsubishi",
+  "Komatsu",
+  "Nissan",
+  "UniCarriers",
+  "Clark",
+  "Doosan",
+  "Bobcat",
+  "Hyundai",
+  "TCM",
+  "Linde",
+  "Jungheinrich",
+  "STILL",
+  "BYD",
+  "Hangcha",
+  "Heli",
+  "EP Equipment",
+  "Noblelift",
+  "Big Joe",
+  "Bendi",
+  "Drexel",
+  "Landoll",
+  "Combilift",
+  "Aisle-Master",
+  "Flexi",
+  "Mariotti",
+  "Manitou",
+  "JCB",
+  "Sellick",
+  "Taylor",
+  "Hoist",
+  "Kalmar",
+  "Konecranes",
+  "SANY",
+  "LiuGong",
+  "Maximal",
+  "Baoli",
+  "Lonking",
+  "XCMG",
+  "Bomaq",
+  "Pettibone",
+  "Wiggins",
+  "Hubtex",
+  "Bulmor",
+  "Master Craft",
+];
+
 export default function ContactForm() {
   const [form, setForm] = useState({
     fullName: "",
@@ -9,7 +62,9 @@ export default function ContactForm() {
     phone: "",
     email: "",
     serviceLocation: "",
-    equipmentMakeModel: "",
+    equipmentMake: "",
+    equipmentModel: "",
+    serialNumber: "",
     equipmentType: "",
     serviceNeeded: "",
     preferredContact: "",
@@ -26,7 +81,7 @@ export default function ContactForm() {
     e.preventDefault();
     const subject = encodeURIComponent("Service Quote Request");
     const body = encodeURIComponent(
-      `Full Name: ${form.fullName}\nBusiness: ${form.businessName}\nPhone: ${form.phone}\nEmail: ${form.email}\nLocation/ZIP: ${form.serviceLocation}\nEquipment: ${form.equipmentMakeModel}\nType: ${form.equipmentType}\nService: ${form.serviceNeeded}\nPreferred Contact: ${form.preferredContact}\n\nDetails:\n${form.details}`
+      `Full Name: ${form.fullName}\nBusiness: ${form.businessName}\nPhone: ${form.phone}\nEmail: ${form.email}\nLocation/ZIP: ${form.serviceLocation}\nMake: ${form.equipmentMake}\nModel: ${form.equipmentModel}\nSerial Number: ${form.serialNumber}\nType: ${form.equipmentType}\nService: ${form.serviceNeeded}\nPreferred Contact: ${form.preferredContact}\n\nDetails:\n${form.details}`
     );
     window.location.href = `mailto:support@kaballahenterprise.com?subject=${subject}&body=${body}`;
   };
@@ -121,12 +176,43 @@ export default function ContactForm() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Equipment Make and Model
+                  Make
+                </label>
+                <select
+                  name="equipmentMake"
+                  value={form.equipmentMake}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent"
+                >
+                  <option value="">Select make...</option>
+                  {FORKLIFT_MAKES.map((make) => (
+                    <option key={make}>{make}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Model
                 </label>
                 <input
                   type="text"
-                  name="equipmentMakeModel"
-                  value={form.equipmentMakeModel}
+                  name="equipmentModel"
+                  value={form.equipmentModel}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Serial Number
+                </label>
+                <input
+                  type="text"
+                  name="serialNumber"
+                  value={form.serialNumber}
                   onChange={handleChange}
                   className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent"
                 />

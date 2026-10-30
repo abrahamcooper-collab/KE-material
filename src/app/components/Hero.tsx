@@ -14,7 +14,10 @@ export default function Hero() {
             <div className="w-8 h-[2px] bg-[#f97316]" />
             <span className="text-[#f97316] text-xs font-semibold tracking-[0.15em] uppercase">Forklift Repair &amp; Material Handling Services</span>
           </div>
-          <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-5">
+          <p className="text-white font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-4">
+            KE Material Handling
+          </p>
+          <h1 className="text-white font-semibold text-lg sm:text-xl lg:text-2xl leading-snug mb-5">
             Keep Your Equipment Moving.{" "}
             <span className="text-[#f97316]">Keep Your Business Running.</span>
           </h1>
