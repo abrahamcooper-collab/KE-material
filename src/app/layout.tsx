@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import HashScrollFix from "./components/HashScrollFix";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +20,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <HashScrollFix />
+        {children}
+      </body>
     </html>
   );
 }
