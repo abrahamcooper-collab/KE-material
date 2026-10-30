@@ -313,6 +313,13 @@ export default function ContactForm() {
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 2.98 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 Call (972) 277-7563
               </a>
+              <a
+                href="tel:9723271619"
+                className="inline-flex items-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-700 text-sm font-semibold px-6 py-3 rounded-md transition-colors"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 2.98 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Dispatch (972) 327-1619
+              </a>
             </div>
           </form>
 
@@ -344,6 +351,13 @@ export default function ContactForm() {
                   <div>
                     <span className="text-gray-400 text-[10px] tracking-[0.1em] uppercase font-semibold">Phone</span>
                     <p className="text-[#111827] text-sm font-medium">(972) 277-7563</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-[#f97316] flex-shrink-0 mt-0.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 2.98 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <div>
+                    <span className="text-gray-400 text-[10px] tracking-[0.1em] uppercase font-semibold">Dispatch</span>
+                    <p className="text-[#111827] text-sm font-medium">(972) 327-1619</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

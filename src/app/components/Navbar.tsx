@@ -113,7 +113,7 @@ export default function Navbar() {
             href="tel:9723271619"
             className="text-white text-sm font-medium hover:text-[#f97316] transition-colors"
           >
-            (972) 327-1619
+            <span className="text-white/50">Dispatch:</span> (972) 327-1619
           </a>
           <Link
             href="/#contact"
@@ -121,6 +121,12 @@ export default function Navbar() {
           >
             Request a Quote
           </Link>
+        </div>
+
+        {/* Mobile Phones */}
+        <div className="lg:hidden ml-auto mr-3 flex flex-col items-end text-[11px] leading-tight font-medium">
+          <a href="tel:9722777563" className="text-white">(972) 277-7563</a>
+          <a href="tel:9723271619" className="text-white/80"><span className="text-[#f97316]">Dispatch</span> (972) 327-1619</a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -194,8 +200,9 @@ export default function Navbar() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-[#f97316]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 2.98 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               (972) 277-7563
             </a>
-            <a href="tel:9723271619" className="flex items-center gap-2 text-white text-sm font-medium pl-[22px]">
-              (972) 327-1619
+            <a href="tel:9723271619" className="flex items-center gap-2 text-white text-sm font-medium ">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-[#f97316]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 2.98 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <span className="text-white/50">Dispatch:</span> (972) 327-1619
             </a>
             <Link
               href="/#contact"

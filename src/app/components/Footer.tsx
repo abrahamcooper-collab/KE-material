@@ -56,7 +56,7 @@ export default function Footer() {
                 </a>
                 <span className="text-white/30">|</span>
                 <a href="tel:9723271619" className="text-white/80 hover:text-[#f97316] transition-colors">
-                  (972) 327-1619
+                  <span className="text-white/50">Dispatch:</span> (972) 327-1619
                 </a>
               </li>
               <li>
