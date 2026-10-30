@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { SERVICES, CITIES } from "@/app/lib/data";
 
 function ChevronDown({ open }: { open: boolean }) {
@@ -61,6 +62,13 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
 
+  const router = useRouter();
+
+  const goHome = useCallback(() => {
+    router.push("/");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [router]);
+
   const serviceItems = SERVICES.map((s) => ({ name: s.shortTitle, slug: s.slug, basePath: "services" }));
   const cityItems = CITIES.map((c) => ({ name: `${c.name}, ${c.state}`, slug: c.slug, basePath: "service-area" }));
 
@@ -82,7 +90,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6">
-          <Link href="/" className="text-gray-300 hover:text-white text-sm transition-colors">Home</Link>
+          <button onClick={goHome} className="text-gray-300 hover:text-white text-sm transition-colors cursor-pointer">Home</button>
           <Dropdown label="Services" items={serviceItems} />
           <Dropdown label="Service Areas" items={cityItems} />
           <Link href="/#equipment" className="text-gray-300 hover:text-white text-sm transition-colors">Equipment</Link>
@@ -121,7 +129,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-[#1a1a1a] border-t border-white/10 px-4 py-4 max-h-[calc(100vh-58px)] overflow-y-auto">
-          <Link href="/" className="block text-gray-300 hover:text-white text-sm py-2.5" onClick={() => setMenuOpen(false)}>Home</Link>
+          <button onClick={() => { goHome(); setMenuOpen(false); }} className="block text-gray-300 hover:text-white text-sm py-2.5 cursor-pointer">Home</button>
 
           {/* Mobile Services */}
           <div>

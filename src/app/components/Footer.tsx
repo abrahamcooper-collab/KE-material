@@ -109,7 +109,15 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <p>© 2025 KE Material Handling Solutions. All rights reserved.</p>
-          <p>Serving the Dallas–Fort Worth Metroplex, TX</p>
+          <p className="hidden sm:block">Serving the Dallas–Fort Worth Metroplex, TX</p>
+          <a
+            href="https://upscalers.us"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-white/70 hover:text-[#f97316] transition-colors"
+          >
+            Built by Upscalers
+          </a>
         </div>
 
       </div>
